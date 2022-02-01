@@ -7,6 +7,7 @@ import RegisterScreen from "./screeens/Auth/RegisterScreen";
 import ForgotPassword from "./screeens/Auth/ForgotPassword";
 import ResetPassword from "./screeens/Auth/ResetPassword";
 import PredectorScreen from "./screeens/Colleges/PredectorScreen";
+import OrCrScreen from "./screeens/Colleges/OrCrScreen";
 
 // const LoginScreen = React.lazy(() => import("./screeens/Auth/LoginScreen"));
 
@@ -30,6 +31,7 @@ function App() {
               </Suspense>
             }
           />
+          <Route exact path='/orcr' element={<OrCrScreen />} />
         </Routes>
       </Container>
     </>

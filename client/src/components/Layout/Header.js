@@ -14,6 +14,9 @@ const Header = () => {
 
   const guestItems = (
     <>
+      <LinkContainer to='/orcr'>
+        <Nav.Link>Opening rank and Closing rank of previous years</Nav.Link>
+      </LinkContainer>
       <LinkContainer to='/predictor'>
         <Nav.Link>Predict college</Nav.Link>
       </LinkContainer>
