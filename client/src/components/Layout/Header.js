@@ -14,6 +14,9 @@ const Header = () => {
 
   const guestItems = (
     <>
+      <LinkContainer to='/predictor'>
+        <Nav.Link>Predict college</Nav.Link>
+      </LinkContainer>
       <LinkContainer to='/login'>
         <Nav.Link>Sign in</Nav.Link>
       </LinkContainer>
@@ -72,7 +75,7 @@ const Header = () => {
 
   return (
     <Navbar
-      className='bg-primary shadow-lg'
+      className='bg-primary shadow-lg mb-4'
       variant='dark'
       expand='lg'
       collapseOnSelect
