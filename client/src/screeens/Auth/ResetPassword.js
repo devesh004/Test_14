@@ -53,9 +53,7 @@ const ResetPassword = () => {
       return;
     } else {
       setTouched(false);
-      console.log(password);
       dispatch(resetPassword(password));
-      //   dispatch(registerUser(password));
     }
   };
 
@@ -78,7 +76,9 @@ const ResetPassword = () => {
                   variant='warning'
                 />
                 <Spinner size='sm' animation='grow' variant='success' />
-                <span className='mx-1 text-warning'>Logging you in...</span>
+                <span className='mx-1 text-warning'>
+                  updating password and logging you in..
+                </span>
               </div>
             )}
             <FloatingLabel
@@ -92,6 +92,7 @@ const ResetPassword = () => {
                 name='password'
                 type='password'
                 placeholder='Password'
+                disabled={loading}
               />
               <Form.Text className={passInvalid && "error-text"}>
                 Password should be 7 to 15 characters which contain at least one
@@ -110,6 +111,7 @@ const ResetPassword = () => {
                 onChange={changeHandler}
                 type='password'
                 placeholder='Enter your password again'
+                disabled={loading}
               />
               {passNotMatch && (
                 <Form.Text className='error-text'>

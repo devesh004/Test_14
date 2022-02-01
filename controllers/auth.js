@@ -139,7 +139,7 @@ exports.resetPassword = wrapAsync(async (req, res, next) => {
   });
 
   if (!user) {
-    return next(new ErrorResponse("Invalid token", 500));
+    return next(new ErrorResponse("Reset link expired or used", 500));
   }
 
   user.password = req.body.password;

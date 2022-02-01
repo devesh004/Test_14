@@ -13,6 +13,7 @@ import {
   MAIL_SEND_ERR,
   RESET_PASS_REQ,
   RESET_PASS_ERR,
+  RESET_PASS_SUCC,
 } from "./types";
 
 import axios from "axios";
@@ -159,7 +160,7 @@ export const resetPassword = (password) => async (dispatch) => {
     );
 
     dispatch({
-      type: REGISTER_SUCC,
+      type: RESET_PASS_SUCC,
       payload: data,
     });
 
