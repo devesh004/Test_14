@@ -1,4 +1,4 @@
-import ErrorResponse from "../utils/ErrorResponse.js";
+const ErrorResponse = require("../utils/ErrorResponse.js");
 
 const errorhandler = (err, req, res, next) => {
   let error = err;
@@ -16,8 +16,9 @@ const errorhandler = (err, req, res, next) => {
   }
 
   res.status(error.statusCode || 500).json({
+    err: true,
     msg: error.message || "Something went wrong with server",
   });
 };
 
-export default errorhandler;
+module.exports = errorhandler;
