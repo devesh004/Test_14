@@ -84,7 +84,7 @@ exports.getMe = wrapAsync(async (req, res, next) => {
   });
 });
 
-// @desc     Forgot password
+// @desc     Forgot password link send
 // @route    POST /api/auth/forgotpassword
 // @access   Public
 exports.forgotPassword = wrapAsync(async (req, res, next) => {
@@ -99,9 +99,8 @@ exports.forgotPassword = wrapAsync(async (req, res, next) => {
   await user.save({ validateBeforeSave: false });
 
   //create reset url
-  const resetUrl = `${req.protocol}://${req.get(
-    "host"
-  )}/api/auth/v1/resetpassword/${resetToken}`;
+  let host = process.env.HOST || window.location.origin;
+  const resetUrl = `${host}/resetpassword?token=${resetToken}`;
 
   try {
     // Send mail to user.email

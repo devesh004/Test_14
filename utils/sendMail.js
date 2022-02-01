@@ -12,7 +12,7 @@ exports.sendMail = async (to, link) => {
     text: "and easy to do anywhere, even with Node.js",
     html: `<div>
       <p>CLick below link to reset password</p>
-      <a href='${link}'>RESET</a>
+      <a href='${link}'>${link}</a>
   </div>`,
   };
 
